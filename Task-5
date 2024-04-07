@@ -1,0 +1,102 @@
+create your own resume data in JSON format in java script 
+for the above JSON, iterate overall for loops(for, for in, for of, forEach)
+
+const resumeData = {
+  "name": "John Smith",
+  "email": "john.smith@example.com",
+  "phone": "+1 (123) 456-7890",
+  "address": "123 Main Street, City, Country",
+  "summary": "Experienced software engineer with a passion for building scalable and efficient web applications. Skilled in full-stack development, with expertise in JavaScript, Node.js, and React. Strong problem-solving abilities and a proven track record of delivering high-quality software solutions.",
+  "experience": [
+    {
+      "position": "Senior Software Engineer",
+      "company": "Tech Solutions Inc.",
+      "location": "City, Country",
+      "dates": "January 2018 - Present",
+      "responsibilities": [
+        "Led a team of developers in the design and implementation of a new microservices architecture.",
+        "Developed RESTful APIs using Node.js and Express, improving system performance and scalability.",
+        "Collaborated with product managers and designers to deliver features that meet user requirements and expectations."
+      ]
+    },
+    {
+      "position": "Software Engineer",
+      "company": "WebTech Co.",
+      "location": "City, Country",
+      "dates": "June 2015 - December 2017",
+      "responsibilities": [
+        "Designed and developed user interfaces for web applications using React.js.",
+        "Implemented automated testing procedures to ensure code quality and reliability.",
+        "Contributed to the optimization of database queries and server-side code for improved performance."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Science in Computer Science",
+      "institution": "University Name",
+      "location": "City, Country",
+      "dates": "2011 - 2015"
+    }
+  ],
+  "skills": [
+    "JavaScript",
+    "Node.js",
+    "React",
+    "HTML",
+    "CSS",
+    "SQL",
+    "RESTful APIs",
+    "Git",
+    "Agile Methodologies"
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "proficiency": "Native"
+    },
+    {
+      "language": "Spanish",
+      "proficiency": "Intermediate"
+    }
+  ],
+  "interests": [
+    "Reading",
+    "Traveling",
+    "Hiking",
+    "Photography"
+  ]
+};
+
+// Using for...in loop to iterate over the resume data object
+console.log("Using for...in loop:");
+for (let key in resumeData) {
+  console.log(`${key}: ${resumeData[key]}`);
+}
+
+// Using for...of loop to iterate over the skills array
+console.log("\nUsing for...of loop:");
+for (let skill of resumeData.skills) {
+  console.log(skill);
+}
+
+// Using forEach method to iterate over the experience array
+console.log("\nUsing forEach method:");
+resumeData.experience.forEach((job, index) => {
+  console.log(`Job ${index + 1}: ${job.position} at ${job.company}`);
+  console.log(`Location: ${job.location}`);
+  console.log(`Dates: ${job.dates}`);
+  console.log("Responsibilities:");
+  job.responsibilities.forEach((responsibility, idx) => {
+    console.log(`- ${responsibility}`);
+  });
+});
+
+// Using regular for loop to iterate over the education array
+console.log("\nUsing regular for loop:");
+for (let i = 0; i < resumeData.education.length; i++) {
+  console.log(`Degree: ${resumeData.education[i].degree}`);
+  console.log(`Institution: ${resumeData.education[i].institution}`);
+  console.log(`Location: ${resumeData.education[i].location}`);
+  console.log(`Dates: ${resumeData.education[i].dates}`);
+}
